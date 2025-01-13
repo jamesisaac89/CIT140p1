@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html><head>
+
+<meta charset="utf-8">
+
+<title>ProgrammingProject1</title>
+
+<script>
+
+ function calculateTotal() {
+
+ // Get the values from the input fields
+
+ itemCost = (document.getElementById('itemCost').value);
+
+ quantity = (document.getElementById('quantity').value);
+
+ // Check if inputs are valid
+
+ if (isNaN(itemCost) || isNaN(quantity) || itemCost < 0 || quantity < 0) {
+
+ alert("Please enter valid numbers for item cost and quantity.");
+
+ return;
+
+ }
+
+ // Calculate total cost
+
+ totalCost = itemCost * quantity;
+
+ tax = totalCost * 0.06;
+
+ totalWithTax = totalCost + tax;
+
+ // Display the total cost in the third textbox
+
+ document.getElementById('totalCost').value = totalWithTax.toFixed(2);
+
+ }
+
+ </script>
+
+</head>
+
+<body>
+
+ <div>
+
+ <label for="itemCost">Enter item cost:</label>
+
+ <input type="text" id="itemCost">
+
+ </div>
+
+ <div>
+
+ <label for="quantity">Enter quantity purchased:</label>
+
+ <input type="text" id="quantity">
+
+ </div>
+
+ <div>
+
+ <label for="totalCost">Total cost with 6% tax:</label>
+
+ <input type="text" id="totalCost" readonly>
+
+ </div>
+
+ <button onclick="calculateTotal()">Calculate</button>
+
+</body></html>
